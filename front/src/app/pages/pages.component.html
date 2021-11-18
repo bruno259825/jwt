@@ -1,0 +1,14 @@
+<div class="row mt-4">
+    <div class="col-2">
+        <div class="list-group">
+            <a routerLink="perfil" class="list-group-item list-group-item-action" routerLinkActive="active" aria-current="true">
+              Perfil
+            </a>
+            <a routerLink="entidades" class="list-group-item list-group-item-action" routerLinkActive="active">Entidades</a>
+            <a  class="list-group-item list-group-item-action" (click)="cerrarSesion()" >Cerrar Sesión</a>
+        </div>
+    </div>
+    <div class="col-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

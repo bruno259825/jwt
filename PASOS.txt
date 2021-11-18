@@ -1,0 +1,13 @@
+
+1. Crear la base de datos: 'sintad'
+2. Ejecutar spring boot para crear las tablas.
+3. Ejecutar el script SQL que adjunto. Contiene los datos.
+4. Hacer un POST al siguiente endpoint para registrar a un usuario.
+
+http://localhost:8080/api/usuarios
+
+- username
+- password 
+- name (opcional)
+
+5. Logearse en la interfaz web.

@@ -1,0 +1,27 @@
+<div class="row pl-5 pt-4">
+    <table class="table col-9">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">N doc</th>
+            <th scope="col">Razón Social</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let entidad of entidades">
+            <th>{{entidad.nro_documento}}</th>
+            <td>{{(entidad.razon_social.length<=20)?entidad.razon_social:entidad.razon_social.substr(0,20)+'...'}}</td>
+            <td>{{(entidad.direccion.length<=33)?entidad.direccion:entidad.direccion.substr(0,33)+'...'}}</td>
+            <td class="action-icon">
+                <a><mat-icon  class="action-icon ml-3" (click)="openDialog('edit',entidad)">edit</mat-icon></a> 
+                <a><mat-icon class="action-icon ml-3" (click)="openDialog('del',entidad)">delete</mat-icon></a> 
+            </td>
+          </tr>
+        </tbody>
+    </table> 
+    <app-mdel *ngIf="abrirMdel" (emitir)="eliminar($event)"></app-mdel>
+    <app-medit *ngIf="abrirMedit" (emitir)="editar($event)" [entidadSeleccionada]="entidadSeleccionada"></app-medit>
+</div>
+  
